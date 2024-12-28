@@ -19,3 +19,20 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.sprite {
+  transform: translateX(0);
+}
+
+.sprite.playing {
+  animation: moveSprite var(--animation-duration) steps(var(--frame-count, 8)) infinite;
+}
+
+@keyframes moveSprite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-1 * var(--total-width) + var(--frame-width)));
+  }
+}
